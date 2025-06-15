@@ -1,0 +1,138 @@
+body {
+    font-family: 'Inter', sans-serif; /* Use Inter font */
+    background-color: #e0f2fe; /* Light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.container {
+    background-color: #ffffff; /* White background for the card */
+    padding: 32px;
+    border-radius: 16px; /* More rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.input-section {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+#cityInput {
+    flex-grow: 1; /* Allow input to take available space */
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1; /* Light gray border */
+    border-radius: 8px; /* Rounded input */
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+#cityInput:focus {
+    border-color: #3b82f6; /* Blue border on focus */
+}
+#getWeatherBtn {
+    padding: 12px 24px;
+    background-color: #3b82f6; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Rounded button */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+#getWeatherBtn:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+    transform: translateY(-1px); /* Slight lift effect */
+}
+#getWeatherBtn:active {
+    transform: translateY(0); /* Press effect */
+}
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    margin-top: 20px;
+}
+.weather-info.hidden {
+    display: none;
+}
+#city-name {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    color: #1a202c; /* neutral-900 */
+}
+#temperature {
+    font-size: 3rem; /* text-5xl */
+    font-weight: 800; /* font-extrabold */
+    color: #1d4ed8; /* blue-700 */
+}
+#description {
+    font-size: 1.25rem; /* text-xl */
+    color: #4a5568; /* neutral-700 */
+    text-transform: capitalize; /* Capitalize the first letter */
+}
+#details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid */
+    gap: 16px;
+    width: 100%;
+    padding: 16px;
+    background-color: #e2e8f0; /* Light gray background for details */
+    border-radius: 12px;
+    margin-top: 20px;
+}
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #4a5568;
+    font-weight: 500;
+}
+.detail-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d3748; /* Darker neutral */
+}
+#weather-icon {
+    width: 120px;
+    height: 120px;
+    margin: -20px 0 -30px 0; /* Adjust positioning */
+}
+.message-box {
+    background-color: #fef2f2; /* Light red for errors */
+    color: #ef4444; /* Red text */
+    padding: 12px;
+    border: 1px solid #fca5a5; /* Red border */
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out; /* Fade-in effect */
+}
+.loading-box {
+    background-color: #eff6ff; /* Light blue for loading */
+    color: #2563eb; /* Blue text */
+    padding: 12px;
+    border: 1px solid #93c5fd; /* Blue border */
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
